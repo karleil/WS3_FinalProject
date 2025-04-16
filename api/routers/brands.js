@@ -3,7 +3,7 @@ const brandRouter = express.Router();
 const db = require("../db");
 
 brandRouter.get("/", (req, res) => {
-    const sql = 'SELECT * FROM brands';
+    const sql = 'SELECT * FROM brand';
     db.query(sql, (error, results) => {
 
         if (error) {
@@ -18,7 +18,7 @@ brandRouter.get("/", (req, res) => {
 brandRouter.post('/', (req,res) =>{ //handles POST requests to add a new artist
 
     const {brand_name} = req.body; //this gets a new brand name from the req body.
-    const addbrandSQL = `INSERT INTO brands (name) VALUES (?)`; //this creates an SQL query to insert the new brand to the database.
+    const addbrandSQL = `INSERT INTO brand (name) VALUES (?)`; //this creates an SQL query to insert the new brand to the database.
     db.query(addbrandSQL, [brand_name], (error, results) => { //executes the query but replaces the ? with the brand name
     
         if (error) { //error and success handling.

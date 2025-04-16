@@ -3,7 +3,7 @@ const mysql = require("mysql2"); //we use mysql for the server
 const db = mysql.createConnection({ //this is used to use the details of the server to connect to it.
     user: "root",
     password: 'root',
-    database: "guitarStore",
+    database: "guitar",
     host: "localhost",
     port: "8889"
 });
